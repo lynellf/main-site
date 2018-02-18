@@ -69,7 +69,7 @@ class Register extends Component {
   registerUser(userData) {
     $.ajax({
       type: 'POST',
-      url: '/auth/local/register',
+      url: '/api/auth/local/register',
       data: {
         username: userData.username,
         email: userData.email,

@@ -54,7 +54,7 @@ export default class Traffic extends Component {
     } else {
       $.ajax({
         type: 'GET',
-        url: '/article',
+        url: '/api/article',
         headers: {
           Authorization: `Bearer ${token}`,
         },

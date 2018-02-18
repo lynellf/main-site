@@ -89,7 +89,7 @@ class NewPost extends Component {
     } else {
       $.ajax({
         type: 'POST',
-        url: '/post',
+        url: '/api/post',
         data: {
           title: post.title,
           content: post.body,

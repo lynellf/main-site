@@ -49,7 +49,7 @@ class Login extends Component {
   loginUser(userData) {
     $.ajax({
       type: 'POST',
-      url: '/auth/local',
+      url: '/api/auth/local',
       data: {
         identifier: userData.email,
         password: userData.password,

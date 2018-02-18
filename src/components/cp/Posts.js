@@ -44,6 +44,27 @@ export default class Posts extends Component {
     });
   }
 
+  deletePost(id, arrayIndex, index) {
+    const sortedPosts = this.state.sortedPosts,
+      postClasses = this.state.postClasses;
+      $.ajax({
+        type: 'DELETE',
+        url: `/api/delete/${id}`
+      })
+      .done(() => {
+        sortedPosts[arrayIndex].splice(index, 1);
+        postClasses[arrayIndex].splice(index, 1);
+        this.setState({
+          sortedPosts: sortedPosts,
+          postClasses: postClasses,
+          confirmation: `Post id ${id} has been deleted.`,
+        });
+      })
+      .fail(error => {
+          console.log('An error occurred:', error);
+        });
+  }
+
   grouper(array) {
     let groups = [],
       group = [];
@@ -116,7 +137,7 @@ export default class Posts extends Component {
     } else {
       $.ajax({
         type: 'GET',
-        url: '/article',
+        url: '/api/article',
         headers: {
           Authorization: `Bearer ${token}`,
         },

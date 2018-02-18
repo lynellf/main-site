@@ -15,7 +15,7 @@ export default class Index extends Component {
     };
   }
   componentWillMount() {
-    $.ajax({ type: 'GET', url: 'http://localhost:1337/post' })
+    $.ajax({ type: 'GET', url: '/api/post' })
       .done(post => {
         this.setState({ entries: post, isLoading: false });
       })

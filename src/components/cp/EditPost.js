@@ -87,7 +87,7 @@ class EditPost extends Component {
     } else {
       $.ajax({
         type: 'PUT',
-        url: `/post/${this.props.match.params.id}`,
+        url: `/api/post/${this.props.match.params.id}`,
         data: {
           title: post.title,
           content: post.body,
@@ -147,7 +147,7 @@ class EditPost extends Component {
     } else {
       $.ajax({
         type: 'GET',
-        url: '/article',
+        url: '/api/article',
         headers: {
           Authorization: `Bearer ${token}`,
         },
