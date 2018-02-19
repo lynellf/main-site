@@ -1,9 +1,8 @@
 import ReactDOM from 'react-dom';
+import React from 'react';
 import './styles/css/styles.css';
-import { routes } from './components/router';
+import Index from './components/Index';
 
 
-const router = routes();
-
-ReactDOM.render(router, document.getElementById('root'));
+ReactDOM.render(<Index/>, document.getElementById('root'));
 
